@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from beeApp import views
-from bee import urls_tag, urls_badge
+from bee import urls_tag, urls_badge, urls_comment
 
 urlpatterns = [
     # Examples:
@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^tag/', include(urls_tag)),
     url(r'^badge/', include(urls_badge)),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^comment/', include(urls_comment)),
 ]

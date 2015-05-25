@@ -9,7 +9,7 @@ GENDER_CHOICES = (
 )
 
 SEXUAL_ORIENTATION_CHOICES = (
-	('HT', 'Héterossexual'),
+	('HT', 'Heterossexual'),
 	('H', 'Homossexual'),
 	('B', 'Bissexual'),
 	('T', 'Transexual'),
@@ -46,7 +46,6 @@ class Post(models.Model):
 
 class Comment(models.Model):
 	text = models.TextField(verbose_name = "comentário", max_length=400)
-	likes = models.PositiveIntegerField(verbose_name="curtidas")
 	author = models.ForeignKey(Person, related_name = "have_author_comment")
 	post = models.ForeignKey(Post, related_name = "have_post")
 	comment_likes = models.ManyToManyField(Person, related_name = "likes_person_comment")
